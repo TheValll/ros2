@@ -1,12 +1,20 @@
-# ROS 2 Minimal Node Template
+# ROS 2 Node Template
 
-This repository serves as a template for creating minimal ROS 2 nodes using both C++ (`cpp_pkg`) and Python (`py_pkg`).
+This repository serves as a template for creating ROS 2 nodes using both C++ (`cpp_pkg`) and Python (`py_pkg`).
 
 ## ROS 2 Command Cheat Sheet
 
-Below is a list of corrected common commands used to interact with these nodes.
+**Build the entire workspace:**
 
-### Running Nodes
+```bash
+colcon build
+```
+
+**Build only a specific package:**
+
+```bash
+colcon build --packages-select <package_name>
+```
 
 **Run a specific node from a package:**
 
@@ -20,8 +28,6 @@ ros2 run <package_name> <executable_name>
 ros2 run <package_name> <executable_name> --ros-args -r __node:=<new_node_name>
 ```
 
-### Introspection
-
 **List all active nodes:**
 
 ```bash
@@ -29,10 +35,27 @@ ros2 node list
 ```
 
 **Get detailed information about a specific node:**
-(Displays publishers, subscribers, services, and actions)
 
 ```bash
 ros2 node info <node_name>
+```
+
+**List all active topics:**
+
+```bash
+ros2 topic list
+```
+
+**Visualize the node and topic graph (GUI):**
+
+```bash
+rqt_graph
+```
+
+**Show the structure of a message interface:**
+
+```bash
+ros2 interface show example_interfaces/msg/String
 ```
 
 ## Project Structure
@@ -45,7 +68,9 @@ ROS_WS/
     │   ├── package.xml       # Package metadata and dependencies
     │   ├── include/          # Header files
     │   └── src/
-    │       └── minimal_node.cpp  # C++ Source entry point
+    │       ├── minimal_node.cpp     # Basic node example
+    │       ├── publisher_node.cpp   # Publisher example
+    │       └── subscriber_node.cpp  # Subscriber example
     │
     └── py_pkg/               # Python Package
         ├── setup.py          # Build configuration for Python
@@ -53,5 +78,7 @@ ROS_WS/
         ├── resource/         # Resource markers for ament
         └── py_pkg/
             ├── __init__.py
-            └── minimal_node.py   # Python Source entry point
+            ├── minimal_node.py      # Basic node example
+            ├── publisher_node.py    # Publisher example
+            └── subscriber_node.py   # Subscriber example
 ```

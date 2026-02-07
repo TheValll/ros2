@@ -24,7 +24,9 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            "minimal_py_node = py_pkg.minimal_node:main"
+            "minimal_py_node = py_pkg.minimal_node:main",
+            "publisher = py_pkg.publisher_node:main",
+            "subscriber = py_pkg.subscriber_node:main"
         ],
     },
 )

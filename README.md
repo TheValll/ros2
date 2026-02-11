@@ -28,6 +28,12 @@ ros2 run <package_name> <executable_name>
 ros2 run <package_name> <executable_name> --ros-args -r __node:=<new_node_name>
 ```
 
+**Run a topic and rename it at runtime (Remapping):**
+
+```bash
+ros2 run <package_name> <executable_name> --ros-args -r __node:=<new_node_name> -r <topic_name>:=<new_topic_name>
+```
+
 **List all active nodes:**
 
 ```bash
@@ -46,6 +52,18 @@ ros2 node info <node_name>
 ros2 topic list
 ```
 
+**Get info about a specific topic:**
+
+```bash
+ros2 topic info <topic_name>
+```
+
+**Subscribe to a specific topic:**
+
+```bash
+ros2 topic echo <topic_name>
+```
+
 **Visualize the node and topic graph (GUI):**
 
 ```bash
@@ -56,6 +74,12 @@ rqt_graph
 
 ```bash
 ros2 interface show example_interfaces/msg/String
+```
+
+**Publish to a specific topic:**
+
+```bash
+ros2 topic pub -r <frequency> <node_name><topic_name> <type:example_interfaces/msg/String> <data>
 ```
 
 ## Project Structure

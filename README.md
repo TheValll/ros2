@@ -118,6 +118,18 @@ ros2 bag info <bag_name>
 ros2 bag play <bag_name>
 ```
 
+**List all active services**
+
+```bash
+ros2 service list
+```
+
+**Show the type of a specific service**
+
+```bash
+ros2 service type <service_name>
+```
+
 **Call a server in command line:**
 
 ```bash

@@ -139,8 +139,8 @@ ROS_WS/
     │       ├── minimal_node.cpp     # Basic node example
     │       ├── publisher_node.cpp   # Publisher example
     │       └── subscriber_node.cpp  # Subscriber example
-            ├── server_node.cpp      # Server example based on the AddTwoInts interface
-            └── client_node.cpp      # Client example based on the AddTwoInts interface
+    │       ├── server_node.cpp      # Server example based on the AddTwoInts interface
+    │       └── client_node.cpp      # Client example based on the AddTwoInts interface
     │
     └── py_pkg/               # Python Package
         ├── setup.py          # Build configuration for Python

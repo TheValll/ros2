@@ -136,6 +136,18 @@ ros2 service type <service_name>
 ros2 service call <server_name> <server_type> <request>
 ```
 
+**Run a service and rename it at runtime (Remapping):**
+
+```bash
+ros2 run <package_name> <executable_name> --ros-args -r <old_servie_name>:=<new_service_name>
+```
+
+**Run a client with a server specific name at runtime (Remapping):**
+
+```bash
+ros2 run <package_name> <executable_name> --ros-args -r <old_servie_name>:=<new_service_name>
+```
+
 ## Project Structure
 
 ```text

@@ -31,10 +31,18 @@ ament_target_dependencies(publisher rclcpp example_interfaces)
 add_executable(subscriber src/subscriber_node.cpp)
 ament_target_dependencies(subscriber rclcpp example_interfaces)
 
+add_executable(server src/server_node.cpp)
+ament_target_dependencies(server rclcpp example_interfaces)
+
+add_executable(client src/client_node.cpp)
+ament_target_dependencies(client rclcpp example_interfaces)
+
 install(TARGETS
   minimal_cpp_node
   publisher
   subscriber
+  server
+  client
   DESTINATION lib/${PROJECT_NAME}
 )
 

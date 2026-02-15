@@ -152,29 +152,42 @@ ros2 run <package_name> <executable_name> --ros-args -r <old_servie_name>:=<new_
 
 ```text
 ROS_WS/
-├── bags/                     # Bag file storage directory
+├── bags/                             # ROS2 bag files storage
 │
 └── src/
-    ├── cpp_pkg/              # C++ Package
-    │   ├── CMakeLists.txt    # Build configuration for CMake
-    │   ├── package.xml       # Package metadata and dependencies
-    │   ├── include/          # Header files
-    │   └── src/
-    │       ├── minimal_node.cpp     # Basic node example
-    │       ├── publisher_node.cpp   # Publisher example
-    │       └── subscriber_node.cpp  # Subscriber example
-    │       ├── server_node.cpp      # Server example based on the AddTwoInts interface
-    │       └── client_node.cpp      # Client example based on the AddTwoInts interface
+    ├── custom_interfaces/            # Custom interface package
+    │   ├── CMakeLists.txt
+    │   ├── package.xml
+    │   ├── msg/
+    │   │   └── MinimalInterface.msg   # Custom message definition
+    │   └── srv/
+    │       └── MinimalService.msg     # Custom service definition
     │
-    └── py_pkg/               # Python Package
-        ├── setup.py          # Build configuration for Python
-        ├── package.xml       # Package metadata
-        ├── resource/         # Resource markers for ament
+    ├── cpp_pkg/                      # C++ Package
+    │   ├── CMakeLists.txt            # Build configuration for CMake
+    │   ├── package.xml               # Package metadata and dependencies
+    │   ├── include/
+    │   │   └── cpp_pkg/
+    │   └── src/
+    │       ├── minimal_node.cpp              # Basic node example
+    │       ├── publisher_node.cpp            # Publisher example
+    │       ├── subscriber_node.cpp           # Subscriber example
+    │       ├── server_node.cpp               # Server example (AddTwoInts)
+    │       ├── client_node.cpp               # Client example (AddTwoInts)
+    │       └── custom_interface_node.cpp     # Publisher using MinimalInterface
+    │
+    └── py_pkg/                       # Python Package
+        ├── package.xml               # Package metadata
+        ├── setup.py                  # Build configuration for Python
+        ├── setup.cfg
+        ├── resource/
+        │   └── py_pkg
         └── py_pkg/
             ├── __init__.py
-            ├── minimal_node.py      # Basic node example
-            ├── publisher_node.py    # Publisher example
-            ├── subscriber_node.py   # Subscriber example
-            ├── server_node.py       # Server example based on the AddTwoInts interface
-            └── client_node.py       # Client example based on the AddTwoInts interface
+            ├── minimal_node.py              # Basic node example
+            ├── publisher_node.py            # Publisher example
+            ├── subscriber_node.py           # Subscriber example
+            ├── server_node.py               # Server example (AddTwoInts)
+            ├── client_node.py               # Client example (AddTwoInts)
+            └── custom_interface_node.py     # Publisher using MinimalInterface
 ```

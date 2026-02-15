@@ -9,6 +9,7 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(example_interfaces REQUIRED)
+find_package(custom_interfaces REQUIRED)
 
 # if(BUILD_TESTING)
 #   find_package(ament_lint_auto REQUIRED)
@@ -37,12 +38,16 @@ ament_target_dependencies(server rclcpp example_interfaces)
 add_executable(client src/client_node.cpp)
 ament_target_dependencies(client rclcpp example_interfaces)
 
+add_executable(custom_interface src/custom_interface_node.cpp)
+ament_target_dependencies(custom_interface rclcpp custom_interfaces)
+
 install(TARGETS
   minimal_cpp_node
   publisher
   subscriber
   server
   client
+  custom_interface
   DESTINATION lib/${PROJECT_NAME}
 )
 

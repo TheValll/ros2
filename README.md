@@ -161,11 +161,26 @@ ros2 run <package_name> <executable_name> --ros-args -p <parameter_name>:=<value
 ros2 run <package_name> <executable_name> --ros-args -p <parameter_name1>:=<value1> -p <parameter_name2>:=<value2>
 ```
 
+**Get description of a specific parameter:**
+
+```bash
+ros2 param get <node_name> <parameter_name>
+```
+
+**Run node with parameters file:**
+
+```bash
+ros2 run <package_name> <executable_name> --ros-args --params-file <path_of_your_params_file>
+```
+
 ## Project Structure
 
 ```text
 ROS_WS/
-├── bags/                             # ROS2 bag files storage
+├── bags/                       # ROS2 bag files storage
+│
+├──  yaml_params/
+│    └── minimal_params.yaml    # Parameters file
 │
 └── src/
     ├── custom_interfaces/            # Custom interface package

@@ -173,6 +173,12 @@ ros2 param get <node_name> <parameter_name>
 ros2 run <package_name> <executable_name> --ros-args --params-file <path_of_your_params_file>
 ```
 
+**Change parameters at runtime:**
+
+```bash
+ros2 param set <package_name> <parameter_name> <value> # Need the parameters_callback (no template available in this repo)
+```
+
 ## Project Structure
 
 ```text

@@ -158,6 +158,7 @@ ros2 param list
 
 ```bash
 ros2 run <package_name> <executable_name> --ros-args -p <parameter_name>:=<value>
+ros2 run <package_name> <executable_name> --ros-args -p <parameter_name1>:=<value1> -p <parameter_name2>:=<value2>
 ```
 
 ## Project Structure

@@ -148,6 +148,18 @@ ros2 run <package_name> <executable_name> --ros-args -r <old_servie_name>:=<new_
 ros2 run <package_name> <executable_name> --ros-args -r <old_servie_name>:=<new_service_name>
 ```
 
+**List parameters:**
+
+```bash
+ros2 param list
+```
+
+**Run a specific node from a package with parameters:**
+
+```bash
+ros2 run <package_name> <executable_name> --ros-args -p <parameter_name>:=<value>
+```
+
 ## Project Structure
 
 ```text
@@ -171,6 +183,7 @@ ROS_WS/
     │   └── src/
     │       ├── minimal_node.cpp              # Basic node example
     │       ├── publisher_node.cpp            # Publisher example
+    │       ├── parameters_node.cpp           # Publisher example with parameters declaration
     │       ├── subscriber_node.cpp           # Subscriber example
     │       ├── server_node.cpp               # Server example (AddTwoInts)
     │       ├── client_node.cpp               # Client example (AddTwoInts)
@@ -186,6 +199,7 @@ ROS_WS/
             ├── __init__.py
             ├── minimal_node.py              # Basic node example
             ├── publisher_node.py            # Publisher example
+            ├── parameters_node.py           # Publisher example with parameters declaration
             ├── subscriber_node.py           # Subscriber example
             ├── server_node.py               # Server example (AddTwoInts)
             ├── client_node.py               # Client example (AddTwoInts)

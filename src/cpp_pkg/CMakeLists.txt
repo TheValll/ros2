@@ -41,6 +41,9 @@ ament_target_dependencies(client rclcpp example_interfaces)
 add_executable(custom_interface src/custom_interface_node.cpp)
 ament_target_dependencies(custom_interface rclcpp custom_interfaces)
 
+add_executable(parameters src/parameters_node.cpp)
+ament_target_dependencies(parameters rclcpp example_interfaces)
+
 install(TARGETS
   minimal_cpp_node
   publisher
@@ -48,6 +51,7 @@ install(TARGETS
   server
   client
   custom_interface
+  parameters
   DESTINATION lib/${PROJECT_NAME}
 )
 

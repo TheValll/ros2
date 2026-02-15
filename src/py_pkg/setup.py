@@ -29,7 +29,8 @@ setup(
             "subscriber = py_pkg.subscriber_node:main",
             "server = py_pkg.server_node:main",
             "client = py_pkg.client_node:main",
-            "custom_interface = py_pkg.custom_interface_node:main"
+            "custom_interface = py_pkg.custom_interface_node:main",
+            "parameters = py_pkg.parameters_node:main"
         ],
     },
 )

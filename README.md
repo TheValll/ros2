@@ -179,8 +179,8 @@ ros2 run <package_name> <executable_name> --ros-args --params-file <path_of_your
 ROS_WS/
 ├── bags/                       # ROS2 bag files storage
 │
-├──  yaml_params/
-│    └── minimal_params.yaml    # Parameters file
+├── yaml_params/
+│   └── minimal_params.yaml     # Parameters file
 │
 └── src/
     ├── custom_interfaces/            # Custom interface package

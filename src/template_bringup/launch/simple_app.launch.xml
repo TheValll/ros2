@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="cpp_pkg" exec="publisher"/>
+  <node pkg="cpp_pkg" exec="subscriber"/>
+</launch>

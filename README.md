@@ -179,6 +179,12 @@ ros2 run <package_name> <executable_name> --ros-args --params-file <path_of_your
 ros2 param set <package_name> <parameter_name> <value> # Need the parameters_callback (no template available in this repo)
 ```
 
+**Launch at launch file:**
+
+```bash
+ros2 launch <package_name> <launch_file_name>
+```
+
 ## Project Structure
 
 ```text
@@ -189,6 +195,12 @@ ROS_WS/
 │   └── minimal_params.yaml     # Parameters file
 │
 └── src/
+    ├── template_bringup/             # Launch file package
+    │   ├── CMakeLists.txt
+    │   ├── package.xml
+    │   └── launch/
+    │       └── simple_app.launch.xml          # XML launch file configuration
+    │
     ├── custom_interfaces/            # Custom interface package
     │   ├── CMakeLists.txt
     │   ├── package.xml

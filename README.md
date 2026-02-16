@@ -185,6 +185,12 @@ ros2 param set <package_name> <parameter_name> <value> # Need the parameters_cal
 ros2 launch <package_name> <launch_file_name>
 ```
 
+**Run a node in a specific namespace in XML launch file config:**
+
+```xml
+<node pkg="<package_name>" exec="<executable_name>" namespace="<namespace_name>" />
+```
+
 **Remapping topic in XML launch file config:**
 
 ```xml

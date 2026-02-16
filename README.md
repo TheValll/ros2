@@ -34,6 +34,12 @@ ros2 run <package_name> <executable_name> --ros-args -r __node:=<new_node_name>
 ros2 run <package_name> <executable_name> --ros-args -r __node:=<new_node_name> -r <topic_name>:=<new_topic_name>
 ```
 
+**Run a node in a specific namespace (Remapping):**
+
+```bash
+ros2 run <package_name> <executable_name> --ros-args -r __ns:=/<namespace_name>
+```
+
 **List all active nodes:**
 
 ```bash
@@ -118,13 +124,13 @@ ros2 bag info <bag_name>
 ros2 bag play <bag_name>
 ```
 
-**List all active services**
+**List all active services:**
 
 ```bash
 ros2 service list
 ```
 
-**Show the type of a specific service**
+**Show the type of a specific service:**
 
 ```bash
 ros2 service type <service_name>
@@ -139,13 +145,7 @@ ros2 service call <server_name> <server_type> <request>
 **Run a service and rename it at runtime (Remapping):**
 
 ```bash
-ros2 run <package_name> <executable_name> --ros-args -r <old_servie_name>:=<new_service_name>
-```
-
-**Run a client with a server specific name at runtime (Remapping):**
-
-```bash
-ros2 run <package_name> <executable_name> --ros-args -r <old_servie_name>:=<new_service_name>
+ros2 run <package_name> <executable_name> --ros-args -r <old_service_name>:=<new_service_name>
 ```
 
 **List parameters:**
@@ -161,7 +161,7 @@ ros2 run <package_name> <executable_name> --ros-args -p <parameter_name>:=<value
 ros2 run <package_name> <executable_name> --ros-args -p <parameter_name1>:=<value1> -p <parameter_name2>:=<value2>
 ```
 
-**Get description of a specific parameter:**
+**Get the value of a specific parameter:**
 
 ```bash
 ros2 param get <node_name> <parameter_name>
@@ -185,6 +185,30 @@ ros2 param set <package_name> <parameter_name> <value> # Need the parameters_cal
 ros2 launch <package_name> <launch_file_name>
 ```
 
+**Remapping topic in XML launch file config:**
+
+```xml
+<node pkg="<package_name>" exec="<executable_name>">
+  <remap from="<old_topic_name>" to="<new_topic_name>" />
+</node>
+```
+
+**Add parameters in XML launch file config:**
+
+```xml
+<node pkg="<package_name>" exec="<executable_name>">
+  <param name="<parameter_name>" value="<value>"/>
+</node>
+```
+
+**Add parameters in XML launch file config via yaml file:**
+
+```xml
+<node pkg="<package_name>" exec="<executable_name>">
+  <param from="$(find-pkg-share <package_name>)/path_of_your_params_file" />
+</node>
+```
+
 ## Project Structure
 
 ```text
@@ -198,8 +222,11 @@ ROS_WS/
     ├── template_bringup/             # Launch file package
     │   ├── CMakeLists.txt
     │   ├── package.xml
-    │   └── launch/
-    │       └── simple_app.launch.xml          # XML launch file configuration
+    │   ├── launch/
+    │   │   ├── simple_app.launch.xml          # XML launch file configuration
+    │   │   └── simple_app.launch.py           # Python launch file configuration
+    │   └── config/
+    │       └── minimal_params.yaml            # Parameters file (same file from yaml_params folder)
     │
     ├── custom_interfaces/            # Custom interface package
     │   ├── CMakeLists.txt
@@ -207,7 +234,7 @@ ROS_WS/
     │   ├── msg/
     │   │   └── MinimalInterface.msg   # Custom message definition
     │   └── srv/
-    │       └── MinimalService.msg     # Custom service definition
+    │       └── MinimalService.srv     # Custom service definition
     │
     ├── cpp_pkg/                      # C++ Package
     │   ├── CMakeLists.txt            # Build configuration for CMake

@@ -1,4 +1,7 @@
 <launch>
-  <node pkg="cpp_pkg" exec="publisher"/>
+  <node pkg="cpp_pkg" exec="parameters">
+    <!-- <param name="message" value="Hello World" /> -->
+    <param from="$(find-pkg-share template_bringup)/config/minimal_params.yaml" />
+  </node>
   <node pkg="cpp_pkg" exec="subscriber"/>
 </launch>

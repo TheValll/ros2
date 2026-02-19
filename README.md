@@ -235,6 +235,9 @@ ros2 launch urdf_tutorial display.launch.py model:=<path_of_your_urdf_file>
 ROS_WS/
 ├── bags/                       # ROS2 bag files storage
 │
+├── basic_urdf/
+│   └── basic_urdf.urdf         # Basic URDF example
+│
 ├── yaml_params/
 │   └── minimal_params.yaml     # Parameters file
 │

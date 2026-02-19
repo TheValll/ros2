@@ -215,6 +215,20 @@ ros2 launch <package_name> <launch_file_name>
 </node>
 ```
 
+**Generate a PDF file showing the TF frame tree:**
+
+```bash
+sudo apt install ros-jazzy-tf2-tools
+ros2 run tf2_tools view_frames # Listens to the /tf topic and generates a PDF of the frame tree
+```
+
+**Open an URDF file with RViz**
+
+```bash
+sudo apt install ros-jazzy-urdf-tutorial
+ros2 launch urdf_tutorial display.launch.py model:=<path_of_your_urdf_file>
+```
+
 ## Project Structure
 
 ```text

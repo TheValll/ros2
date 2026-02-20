@@ -229,6 +229,14 @@ sudo apt install ros-jazzy-urdf-tutorial
 ros2 launch urdf_tutorial display.launch.py model:=<path_of_your_urdf_file>
 ```
 
+**Open an URDF file with RViz without urdf_tutorial**
+
+```bash
+ros2 run robot_state_publisher robot_state_publisher --ros-args -p robot_description:="$(xacro <path_of_your_urdf_file>)"
+sudo apt install ros-jazzy-joint-state-publisher-gui
+ros2 run rviz2 rviz2
+```
+
 ## Project Structure
 
 ```text
@@ -242,6 +250,15 @@ ROS_WS/
 │   └── minimal_params.yaml     # Parameters file
 │
 └── src/
+    ├── basic_description/            # URDF description package
+    │   ├── CMakeLists.txt
+    │   ├── package.xml
+    │   ├── launch/
+    │   │   ├── display.launch.py              # Python launch file (robot_state_publisher + rviz)
+    │   │   └── display.launch.xml             # XML launch file
+    │   └── urdf/
+    │       └── basic_urdf.urdf                # URDF robot description
+    │
     ├── template_bringup/             # Launch file package
     │   ├── CMakeLists.txt
     │   ├── package.xml

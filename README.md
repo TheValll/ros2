@@ -249,11 +249,13 @@ ros2 run rviz2 rviz2 -d <path_of_your_config>
 ROS_WS/
 ├── bags/                       # ROS2 bag files storage
 │
-├── basic_urdf/
-│   └── basic_urdf.urdf         # Basic URDF example
-│
-├── yaml_params/
-│   └── minimal_params.yaml     # Parameters file
+├── utils/
+│   ├── basic_urdf/
+│   │   └── basic_urdf.urdf         # Basic URDF example
+│   ├── yaml_params/
+│   │   └── minimal_params.yaml     # Parameters file
+│   └── rviz_config/
+│       └── urdf_config.rviz        # RViz configuration
 │
 └── src/
     ├── basic_description/            # URDF description package
@@ -262,6 +264,8 @@ ROS_WS/
     │   ├── launch/
     │   │   ├── display.launch.py              # Python launch file (robot_state_publisher + rviz)
     │   │   └── display.launch.xml             # XML launch file
+    │   ├── rviz/
+    │   │   └── urdf_config.rviz               # RViz configuration
     │   └── urdf/
     │       └── basic_urdf.urdf                # URDF robot description
     │
@@ -312,3 +316,4 @@ ROS_WS/
             ├── client_node.py               # Client example (AddTwoInts)
             └── custom_interface_node.py     # Publisher using MinimalInterface
 ```
+

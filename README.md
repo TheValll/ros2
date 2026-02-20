@@ -237,6 +237,12 @@ sudo apt install ros-jazzy-joint-state-publisher-gui
 ros2 run rviz2 rviz2
 ```
 
+**Launch RViz with a saved config file:**
+
+```bash
+ros2 run rviz2 rviz2 -d <path_of_your_config>
+```
+
 ## Project Structure
 
 ```text

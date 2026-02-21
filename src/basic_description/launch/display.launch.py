@@ -9,7 +9,7 @@ import os
 def generate_launch_description():
     ld = LaunchDescription()
     urdf_path = os.path.join(
-        get_package_share_path("basic_description"), "urdf", "basic_urdf.urdf"
+        get_package_share_path("basic_description"), "urdf", "basic_urdf.urdf.xacro"
     )
 
     rviz_config_path = os.path.join(

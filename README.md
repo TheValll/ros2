@@ -243,6 +243,22 @@ ros2 run rviz2 rviz2
 ros2 run rviz2 rviz2 -d <path_of_your_config>
 ```
 
+**Launch Gazebo**
+```bash
+sudo apt install ros-jazzy-ros-gz
+gz sim or gz sim <path_of_your_gazebo_file>
+```
+
+**Show Gazebo topics**
+```bash
+gz topic -l
+```
+
+**Launch Gazebo from ROS2**
+```bash
+ros2 launch ros_gz_sim gz_sim.launch.py gz_args:=<path_of_your_gazebo_file>
+```
+
 ## Project Structure
 
 ```text
@@ -268,6 +284,7 @@ ROS_WS/
     │   │   └── urdf_config.rviz               # RViz configuration
     │   └── urdf/
     │       └── basic_urdf.urdf                # URDF robot description
+    │       └── basic_urdf.urdf.xacro          # URDF robot description with Xacro
     │
     ├── template_bringup/             # Launch file package
     │   ├── CMakeLists.txt
@@ -316,4 +333,3 @@ ROS_WS/
             ├── client_node.py               # Client example (AddTwoInts)
             └── custom_interface_node.py     # Publisher using MinimalInterface
 ```
-

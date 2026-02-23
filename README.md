@@ -259,6 +259,16 @@ gz topic -l
 ros2 launch ros_gz_sim gz_sim.launch.py gz_args:=<path_of_your_gazebo_file>
 ```
 
+**Launch Gazebo from ROS2 with empty SDF file and timer started**
+```bash
+ros2 launch ros_gz_sim gz_sim.launch.py gz_args:="empty.sdf -r"
+```
+
+**Spawn an URDF file in Gazebo**
+```bash
+ros2 run ros_gz_sim create -topic robot_description # You should start the robot_state_publisher before this command  
+```
+
 ## Project Structure
 
 ```text

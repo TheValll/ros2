@@ -307,6 +307,8 @@ ROS_WS/
 ├── utils/
 │   ├── basic_urdf/
 │   │   └── basic_urdf.urdf         # Basic URDF example
+│   ├── gazebo_basic_world/
+│   │   └── basic_world.sdf         # Basic Gazebo world example
 │   ├── yaml_params/
 │   │   └── minimal_params.yaml     # Parameters file
 │   └── rviz_config/
@@ -316,14 +318,18 @@ ROS_WS/
     ├── basic_description/            # URDF description package
     │   ├── CMakeLists.txt
     │   ├── package.xml
+    │   ├── config/
+    │   │   └── gazebo_bridge.yaml             # Gazebo-ROS2 bridge configuration
     │   ├── launch/
     │   │   ├── display.launch.py              # Python launch file (robot_state_publisher + rviz)
     │   │   └── display.launch.xml             # XML launch file
     │   ├── rviz/
     │   │   └── urdf_config.rviz               # RViz configuration
-    │   └── urdf/
-    │       └── basic_urdf.urdf                # URDF robot description
-    │       └── basic_urdf.urdf.xacro          # URDF robot description with Xacro
+    │   ├── urdf/
+    │   │   ├── basic_urdf.urdf                # URDF robot description
+    │   │   └── basic_urdf.urdf.xacro          # URDF robot description with Xacro
+    │   └── worlds/
+    │       └── basic_world.sdf                # Gazebo world file
     │
     ├── template_bringup/             # Launch file package
     │   ├── CMakeLists.txt

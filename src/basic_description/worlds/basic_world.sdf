@@ -67,14 +67,14 @@
       <self_collide>false</self_collide>
     </model>
     <include>
-      <uri>model://shelf</uri>
+      <uri>file:///home/valentin/ros_ws/install/basic_description/share/basic_description/models/shelf</uri>
       <name>shelf_big_movai</name>
-      <pose>-0.058669861154241255 2.5886768025337759 0 0 0 0.0023049660252653058</pose>
+      <pose>-0.058669861154241276 2.5886768025337759 0 0 0 0.0023049660252653049</pose>
     </include>
     <include>
-      <uri>model://grey_wall</uri>
+      <uri>file:///home/valentin/ros_ws/install/basic_description/share/basic_description/models/grey_wall</uri>
       <name>grey_wall</name>
-      <pose>8.8559875488281268 -2.2493071556091313 0 0 0 1.5386901297410853</pose>
+      <pose>1.0042799711227417 -1.5163700580596924 0 0 0 1.5760948660087917</pose>
     </include>
     <light name='sun' type='directional'>
       <pose>0 0 10 0 0 0</pose>

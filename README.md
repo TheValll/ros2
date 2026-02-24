@@ -254,6 +254,11 @@ gz sim or gz sim <path_of_your_gazebo_file>
 gz topic -l
 ```
 
+**Show topics type**
+```bash
+gz topic -i -t <topic_name>
+```
+
 **Launch Gazebo from ROS2**
 ```bash
 ros2 launch ros_gz_sim gz_sim.launch.py gz_args:=<path_of_your_gazebo_file>
@@ -267,6 +272,30 @@ ros2 launch ros_gz_sim gz_sim.launch.py gz_args:="empty.sdf -r"
 **Spawn an URDF file in Gazebo**
 ```bash
 ros2 run ros_gz_sim create -topic robot_description # You should start the robot_state_publisher before this command  
+```
+
+**Gazebo plugins repository**
+```text
+https://github.com/gazebosim/gz-sim/tree/gz-sim10/src/systems
+```
+**Add a bridge between ROS2 and Gazebo**
+```bash
+ros2 run ros_gz_bridge parameter_bridge --ros-args -p config_file:="$(<path_of_your_config_file>)"
+```
+
+**ROS2 topic type convert to Gazebo topic type**
+```text
+https://github.com/gazebosim/ros_gz/tree/ros2/ros_gz_bridge
+```
+
+**Gazebo models example**
+```text
+https://app.gazebosim.org/fuel/models
+```
+
+**Move a robot in a Gazebo world**
+```bash
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
 
 ## Project Structure

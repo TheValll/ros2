@@ -2,6 +2,41 @@
 
 This repository serves as a template for creating ROS 2 nodes using both C++ (`cpp_pkg`) and Python (`py_pkg`).
 
+## Adding Gazebo Models
+
+To use custom models (meshes, walls, shelves, etc.) in a Gazebo world:
+
+1. Place your model in `src/basic_description/models/<model_name>/` with the following structure:
+   ```text
+   models/
+   └── my_model/
+       ├── model.config       # Model metadata
+       ├── model.sdf          # Model SDF (use relative paths for meshes)
+       └── meshes/
+           └── my_mesh.dae    # Mesh files
+   ```
+
+2. The `models` directory is already installed via `CMakeLists.txt`. Just rebuild:
+   ```bash
+   colcon build --packages-select basic_description
+   ```
+
+3. Reference the model in your world SDF with a `model://` URI:
+   ```xml
+   <include>
+     <uri>model://my_model</uri>
+     <name>my_model_instance</name>
+     <pose>0 0 0 0 0 0</pose>
+   </include>
+   ```
+
+4. In your launch file, set `GZ_SIM_RESOURCE_PATH` so Gazebo can resolve `model://` URIs:
+   ```xml
+   <set_env name="GZ_SIM_RESOURCE_PATH" value="$(find-pkg-share basic_description)/models" />
+   ```
+
+> Standalone examples of models are also available in `utils/gazebo_basic_world/assets/`.
+
 ## ROS 2 Command Cheat Sheet
 
 **Build the entire workspace:**

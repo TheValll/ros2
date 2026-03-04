@@ -333,6 +333,52 @@ https://app.gazebosim.org/fuel/models
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
 
+**Install ROS2 control**
+```bash
+sudo apt install ros-jazzy-ros2-control ros-jazzy-ros2-controllers
+```
+
+**ROS2 control repository**
+```text
+https://github.com/ros-controls/ros2_control
+```
+
+**ROS2 controllers repository**
+```text
+https://github.com/ros-controls/ros2_controllers 
+```
+
+**Launch a controller manager file**
+```bash
+ros2 run controller_manager ros2_control_node --ros-args --params-file <path_of_your_controller_manager_config_file>
+```
+
+**Launch the spawner control manager**
+```bash
+ros2 run controller_manager spawner <name_of_your_controller>
+```
+
+**Show controllers list**
+```bash
+ros2 control list_controllers
+```
+
+**Show all controllers**
+```bash
+ros2 control list_controller_types
+```
+
+**Show command interfaces and state interfaces**
+```bash
+ros2 control list_hardware_interfaces
+```
+
+**Show components**
+```bash
+ros2 controt list_hardware_components
+```
+
+
 ## Project Structure
 
 ```text

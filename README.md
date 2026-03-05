@@ -375,7 +375,7 @@ ros2 control list_hardware_interfaces
 
 **Show components**
 ```bash
-ros2 controt list_hardware_components
+ros2 control list_hardware_components
 ```
 
 
@@ -392,8 +392,12 @@ ROS_WS/
 │   │   └── basic_world.sdf         # Basic Gazebo world example
 │   ├── yaml_params/
 │   │   └── minimal_params.yaml     # Parameters file
-│   └── rviz_config/
-│       └── urdf_config.rviz        # RViz configuration
+│   ├── rviz_config/
+│   │   └── urdf_config.rviz        # RViz configuration
+│   └── LX-225-driver/
+│       ├── LX225Driver.hpp          # LX-225 servo driver header
+│       ├── LX225Driver_test.cpp     # Driver test source
+│       └── LX225Driver_test         # Compiled driver test binary
 │
 └── src/
     ├── basic_description/            # URDF description package
@@ -442,6 +446,32 @@ ROS_WS/
     │       ├── server_node.cpp               # Server example (AddTwoInts)
     │       ├── client_node.cpp               # Client example (AddTwoInts)
     │       └── custom_interface_node.cpp     # Publisher using MinimalInterface
+    │
+    ├── ros2_control/                  # ROS2 Control package
+    │   ├── CMakeLists.txt
+    │   ├── package.xml
+    │   ├── config/
+    │   │   └── template_controllers.yaml    # Controllers configuration
+    │   ├── launch/
+    │   │   ├── display.launch.py            # Python launch file
+    │   │   ├── display.launch.xml           # XML launch file
+    │   │   └── old_display.launch.xml       # Old XML launch file
+    │   ├── rviz/
+    │   │   └── urdf_config.rviz             # RViz configuration
+    │   └── urdf/
+    │       ├── common_properties.xacro      # Common URDF properties
+    │       ├── mobile_base.ros2_control.xacro # ros2_control hardware interface
+    │       ├── mobile_base.xacro            # Mobile base URDF description
+    │       └── my_robot.urdf.xacro          # Main robot URDF
+    │
+    ├── lx225_driver_test/              # LX-225 servo driver test package
+    │   ├── CMakeLists.txt
+    │   ├── package.xml
+    │   ├── include/
+    │   │   └── lx225_driver_test/
+    │   │       └── LX225Driver.hpp          # LX-225 servo driver header
+    │   └── src/
+    │       └── lx225_test.cpp               # Driver test node
     │
     └── py_pkg/                       # Python Package
         ├── package.xml               # Package metadata

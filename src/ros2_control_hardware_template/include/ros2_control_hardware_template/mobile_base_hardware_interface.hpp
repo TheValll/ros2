@@ -22,7 +22,9 @@ class MobileBaseHardware : public hardware_interface::SystemInterface {
     int servo_id_;
     int baudrate_;
     std::string port_name_;
-    double hw_position_;
+    double hw_positions_[2] = {0.0, 0.0};
+    double hw_velocities_[2] = {0.0, 0.0};
+    double hw_commands_[2] = {0.0, 0.0};
 };
 
 } // namespace mobile_base_hardware

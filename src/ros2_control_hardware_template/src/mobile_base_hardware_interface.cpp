@@ -12,7 +12,6 @@ hardware_interface::CallbackReturn MobileBaseHardware::on_init(const hardware_in
     servo_id_   = 6;
     baudrate_   = 115200;
     port_name_  = "/dev/ttyUSB0";
-    hw_position_ = 0.0;
 
     driver_ = std::make_shared<LX225Driver>(port_name_, baudrate_, servo_id_);
 
@@ -32,8 +31,10 @@ hardware_interface::CallbackReturn MobileBaseHardware::on_configure(const rclcpp
 hardware_interface::CallbackReturn MobileBaseHardware::on_activate(const rclcpp_lifecycle::State & previous_state)
 {
     (void)previous_state;
-    set_state("base_left_wheel_joint/position", 500);
-    set_state("base_right_wheel_joint/position", 500);
+    set_state("base_left_wheel_joint/position", 0.0);
+    set_state("base_left_wheel_joint/velocity", 0.0);
+    set_state("base_right_wheel_joint/position", 0.0);
+    set_state("base_right_wheel_joint/velocity", 0.0);
     return hardware_interface::CallbackReturn::SUCCESS;
 }
 
@@ -47,16 +48,16 @@ hardware_interface::CallbackReturn MobileBaseHardware::on_deactivate(const rclcp
 hardware_interface::ReturnType MobileBaseHardware::read(const rclcpp::Time & time, const rclcpp::Duration & period)
 {
     (void)time;
-    (void)period;
 
-    int pos = driver_->get_command_servo_position();
-    if (pos < 0) {
-        return hardware_interface::ReturnType::ERROR;
+    for (int i = 0; i < 2; i++) {
+        hw_positions_[i] += hw_commands_[i] * period.seconds();
+        hw_velocities_[i] = hw_commands_[i];
     }
-    hw_position_ = static_cast<double>(pos);
 
-    set_state("base_left_wheel_joint/position", hw_position_);
-    set_state("base_right_wheel_joint/position", hw_position_);
+    set_state("base_left_wheel_joint/position", hw_positions_[0]);
+    set_state("base_left_wheel_joint/velocity", hw_velocities_[0]);
+    set_state("base_right_wheel_joint/position", hw_positions_[1]);
+    set_state("base_right_wheel_joint/velocity", hw_velocities_[1]);
     return hardware_interface::ReturnType::OK;
 }
 
@@ -64,9 +65,9 @@ hardware_interface::ReturnType MobileBaseHardware::write(const rclcpp::Time & ti
 {
     (void)time;
     (void)period;
-    driver_->set_position(get_command("base_left_wheel_position/position"));
-    driver_->set_position(get_command("base_right_wheel_position/position"));
-    return hardware_interface::ReturnType::OK:
+    hw_commands_[0] = get_command("base_left_wheel_joint/velocity");
+    hw_commands_[1] = get_command("base_right_wheel_joint/velocity");
+    return hardware_interface::ReturnType::OK;
 }
 
 } // namespace mobile_base_hardware

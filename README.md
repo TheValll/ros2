@@ -37,6 +37,24 @@ To use custom models (meshes, walls, shelves, etc.) in a Gazebo world:
 
 > Standalone examples of models are also available in `utils/gazebo_basic_world/assets/`.
 
+## ros2_control Hardware Interface
+
+The file `src/ros2_control/urdf/mobile_base.ros2_control.xacro` defines the hardware plugin used by the controller manager.
+
+By default it uses `mock_components/GenericSystem` with `calculate_dynamics: true`, which simulates a perfect loopback (velocity commands are directly reflected as state feedback). This is useful for testing the full ros2_control chain without real hardware.
+
+To connect real servos, edit this file and replace the plugin:
+```xml
+<!-- Replace this -->
+<plugin>mock_components/GenericSystem</plugin>
+<param name="calculate_dynamics">true</param>
+
+<!-- With your hardware interface plugin -->
+<plugin>ros2_control_hardware_template/MobileBaseHardware</plugin>
+```
+
+The `ros2_control_hardware_template` package provides a hardware interface with the LX-225 servo driver. If you use a different servo, replace `LX225Driver.hpp` with your own driver and update the calls in `mobile_base_hardware_interface.cpp`.
+
 ## ROS 2 Command Cheat Sheet
 
 **Build the entire workspace:**
@@ -463,6 +481,16 @@ ROS_WS/
     │       ├── mobile_base.ros2_control.xacro # ros2_control hardware interface
     │       ├── mobile_base.xacro            # Mobile base URDF description
     │       └── my_robot.urdf.xacro          # Main robot URDF
+    │
+    ├── ros2_control_hardware_template/  # ros2_control hardware interface package
+    │   ├── CMakeLists.txt
+    │   ├── package.xml
+    │   ├── include/
+    │   │   └── ros2_control_hardware_template/
+    │   │       ├── LX225Driver.hpp                # LX-225 servo driver
+    │   │       └── mobile_base_hardware_interface.hpp # Hardware interface header
+    │   └── src/
+    │       └── mobile_base_hardware_interface.cpp  # Hardware interface (loopback mock)
     │
     ├── lx225_driver_test/              # LX-225 servo driver test package
     │   ├── CMakeLists.txt

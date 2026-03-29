@@ -55,6 +55,16 @@ To connect real servos, edit this file and replace the plugin:
 
 The `ros2_control_hardware_template` package provides a hardware interface with the LX-225 servo driver. If you use a different servo, replace `LX225Driver.hpp` with your own driver and update the calls in `mobile_base_hardware_interface.cpp`.
 
+## Launch ros2_control with Teleop
+
+```bash
+ros2 launch ros2_control display.launch.xml
+```
+
+```bash
+ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r /cmd_vel:=/diff_drive_controller/cmd_vel -p stamped:=true
+```
+
 ## ROS 2 Command Cheat Sheet
 
 **Build the entire workspace:**
@@ -485,6 +495,7 @@ ROS_WS/
     ├── ros2_control_hardware_template/  # ros2_control hardware interface package
     │   ├── CMakeLists.txt
     │   ├── package.xml
+    │   ├── my_robot_hardware_interface.xml         # pluginlib plugin descriptor
     │   ├── include/
     │   │   └── ros2_control_hardware_template/
     │   │       ├── LX225Driver.hpp                # LX-225 servo driver

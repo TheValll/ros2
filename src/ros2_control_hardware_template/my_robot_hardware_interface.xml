@@ -1,0 +1,7 @@
+<library path="ros2_control_hardware_template">
+  <class name="mobile_base_hardware/MobileBaseHardware" type="mobile_base_hardware::MobileBaseHardware" base_class_type="hardware_interface::SystemInterface">
+    <description>
+      Basic description
+    </description>
+  </class>
+</library>

@@ -1,9 +1,13 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
-  <ros2_control name="MobileBaseHardwareInterface" type="system">
+  <ros2_control name="MobileBase" type="system">
     <hardware>
-      <plugin>mock_components/GenericSystem</plugin>
-      <param name="calculate_dynamics">true</param>
+      <!-- <plugin>mock_components/GenericSystem</plugin>
+      <param name="calculate_dynamics">true</param> -->
+      <plugin>mobile_base_hardware/MobileBaseHardware</plugin>
+      <param name="servo_id">6</param>
+      <param name="baudrate">115200</param>
+      <param name="port">/dev/ttyUSB0</param>
     </hardware>
     <joint name="base_right_wheel_joint">
       <command_interface name="velocity" />

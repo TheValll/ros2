@@ -7,21 +7,21 @@
 ## Questions
 
 **Q1.** What are the three layers of ros2_control?
-- A) Topic, Service, Action
-- B) Application, Controller, Hardware Interface
+- A) Application, Controller, Hardware Interface
+- B) Topic, Service, Action
 - C) Publisher, Subscriber, Service
 - D) URDF, Launch, Config
 
 **Q2.** What is the order of operations in each control loop cycle?
 - A) write -> update -> read
 - B) update -> read -> write
-- C) read -> update -> write
-- D) read -> write -> update
+- C) read -> write -> update
+- D) read -> update -> write
 
 **Q3.** If `update_rate: 50`, how often does the control loop run?
 - A) Every 50 seconds
-- B) Every 20ms (50 times per second)
-- C) Every 50ms
+- B) Every 50ms
+- C) Every 20ms (50 times per second)
 - D) Once per minute
 
 **Q4.** What is a "command interface"?
@@ -31,40 +31,40 @@
 - D) A launch file parameter
 
 **Q5.** What is a "state interface"?
-- A) A boolean flag
-- B) A named double value that hardware writes to and controllers read from (e.g., current position)
+- A) A named double value that hardware writes to and controllers read from (e.g., current position)
+- B) A boolean flag
 - C) A service response
 - D) A log message
 
 **Q6.** How do controllers and hardware exchange data in ros2_control?
 - A) Via DDS topics (serialized messages over the network)
-- B) Via direct shared memory — plain doubles, no serialization, no network
-- C) Via files on disk
-- D) Via HTTP REST API
+- B) Via files on disk
+- C) Via HTTP REST API
+- D) Via direct shared memory — plain doubles, no serialization, no network
 
 **Q7.** What does the `spawner` node do?
 - A) Creates a new robot
-- B) Asks the Controller Manager to load and activate a specific controller
-- C) Starts Gazebo
+- B) Starts Gazebo
+- C) Asks the Controller Manager to load and activate a specific controller
 - D) Compiles the hardware interface
 
 **Q8.** What is the main benefit of ros2_control's architecture?
-- A) It makes the robot faster
-- B) It separates hardware communication from control logic — swap hardware or controllers independently
+- A) It separates hardware communication from control logic — swap hardware or controllers independently
+- B) It makes the robot faster
 - C) It removes the need for URDF
 - D) It only works with one type of robot
 
 **Q9.** Which component manages the control loop and all controllers?
 - A) robot_state_publisher
-- B) DDS
-- C) The Controller Manager (ros2_control_node)
+- B) The Controller Manager (ros2_control_node)
+- C) DDS
 - D) RViz
 
 **Q10.** Why should hardware interface `read()` and `write()` be fast?
 - A) Because slow operations use more RAM
-- B) Because they run in a fixed-rate loop — if they take too long, the loop falls behind (real-time violation)
-- C) Because DDS requires fast operations
-- D) Because Python is slow
+- B) Because DDS requires fast operations
+- C) Because Python is slow
+- D) Because they run in a fixed-rate loop — if they take too long, the loop falls behind (real-time violation)
 
 ---
 

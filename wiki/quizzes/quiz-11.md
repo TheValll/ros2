@@ -8,39 +8,39 @@
 
 **Q1.** What does the JointStateBroadcaster do?
 - A) Commands the wheels
-- B) Reads state interfaces and publishes joint positions/velocities to the `/joint_states` topic
-- C) Parses the URDF
-- D) Controls the camera
+- B) Parses the URDF
+- C) Controls the camera
+- D) Reads state interfaces and publishes joint positions/velocities to the `/joint_states` topic
 
 **Q2.** What topic does the DiffDriveController subscribe to for motion commands?
-- A) `/joint_states`
-- B) `/odom`
-- C) `/cmd_vel` (geometry_msgs/Twist)
+- A) `/cmd_vel` (geometry_msgs/Twist)
+- B) `/joint_states`
+- C) `/odom`
 - D) `/simple_topic`
 
 **Q3.** For a differential drive robot, if both wheels spin at the same speed, the robot:
 - A) Turns left
-- B) Turns right
-- C) Goes straight
+- B) Goes straight
+- C) Turns right
 - D) Spins in place
 
 **Q4.** Given wheel_radius=0.1, wheel_separation=0.45, v=1.0 m/s, omega=0 — what are the wheel speeds?
 - A) w_L = 5, w_R = 15
-- B) w_L = 10, w_R = 10
-- C) w_L = 0, w_R = 20
+- B) w_L = 0, w_R = 20
+- C) w_L = 10, w_R = 10
 - D) w_L = 10, w_R = 0
 
 **Q5.** What is the inverse kinematics formula for the left wheel?
-- A) `w_L = v * r`
-- B) `w_L = (v - omega * L/2) / r`
+- A) `w_L = (v - omega * L/2) / r`
+- B) `w_L = v * r`
 - C) `w_L = omega / r`
 - D) `w_L = v + omega`
 
 **Q6.** If the right wheel spins faster than the left wheel, the robot:
 - A) Goes straight
 - B) Turns right
-- C) Turns left (the faster right wheel pushes the right side forward more)
-- D) Stops
+- C) Stops
+- D) Turns left (the faster right wheel pushes the right side forward more)
 
 **Q7.** What is odometry?
 - A) A type of sensor
@@ -50,13 +50,13 @@
 
 **Q8.** In the odometry equations, what does `theta` represent?
 - A) The robot's speed
-- B) The robot's heading angle (yaw) — the direction it's facing
-- C) The wheel radius
+- B) The wheel radius
+- C) The robot's heading angle (yaw) — the direction it's facing
 - D) The timestamp
 
 **Q9.** Why does odometry drift over time?
-- A) Because the wheels are too small
-- B) Because Euler integration accumulates small errors, and wheels can slip
+- A) Because Euler integration accumulates small errors, and wheels can slip
+- B) Because the wheels are too small
 - C) Because ROS2 has a bug
 - D) Because the URDF is wrong
 

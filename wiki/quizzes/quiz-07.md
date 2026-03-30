@@ -8,25 +8,25 @@
 
 **Q1.** What are the two fundamental building blocks of a URDF?
 - A) Nodes and topics
-- B) Links (rigid bodies) and joints (connections between links)
-- C) Publishers and subscribers
+- B) Publishers and subscribers
+- C) Links (rigid bodies) and joints (connections between links)
 - D) Parameters and services
 
 **Q2.** What joint type allows infinite rotation (like a wheel)?
-- A) `fixed`
-- B) `revolute`
-- C) `continuous`
+- A) `continuous`
+- B) `fixed`
+- C) `revolute`
 - D) `prismatic`
 
 **Q3.** What does Xacro add to URDF?
 - A) Physics simulation
-- B) Properties (variables), macros (reusable templates), and include (file splitting)
-- C) Network communication
-- D) Compilation support
+- B) Network communication
+- C) Compilation support
+- D) Properties (variables), macros (reusable templates), and include (file splitting)
 
 **Q4.** Why does the wheel cylinder need `rpy="${pi/2} 0 0"` in its origin?
-- A) To make it invisible
-- B) Because URDF cylinders are vertical by default, and the wheel needs to be horizontal (rotated 90 degrees around X)
+- A) Because URDF cylinders are vertical by default, and the wheel needs to be horizontal (rotated 90 degrees around X)
+- B) To make it invisible
 - C) To change its color
 - D) To double its size
 
@@ -38,19 +38,19 @@
 
 **Q6.** For a box with mass m and dimensions x, y, z — what is the formula for Ixx?
 - A) `Ixx = m * x * x`
-- B) `Ixx = (m/12) * (y^2 + z^2)`
-- C) `Ixx = (2/5) * m * r^2`
+- B) `Ixx = (2/5) * m * r^2`
+- C) `Ixx = (m/12) * (y^2 + z^2)`
 - D) `Ixx = m * g * h`
 
 **Q7.** What does `robot_state_publisher` do?
 - A) Publishes sensor data
-- B) Reads the URDF and broadcasts TF transforms so every node knows where each link is
-- C) Controls the motors
-- D) Compiles the URDF
+- B) Controls the motors
+- C) Compiles the URDF
+- D) Reads the URDF and broadcasts TF transforms so every node knows where each link is
 
 **Q8.** What coordinate convention does URDF use?
-- A) x=up, y=right, z=forward
-- B) x=forward, y=left, z=up
+- A) x=forward, y=left, z=up
+- B) x=up, y=right, z=forward
 - C) x=left, y=forward, z=down
 - D) It depends on the platform
 
@@ -62,8 +62,8 @@
 
 **Q10.** In TF2, how do you find the position of frame C relative to frame A, going through frame B?
 - A) Add the positions: pos_A + pos_B + pos_C
-- B) Multiply the transformation matrices: T(A->B) * T(B->C)
-- C) Subtract: pos_C - pos_A
+- B) Subtract: pos_C - pos_A
+- C) Multiply the transformation matrices: T(A->B) * T(B->C)
 - D) It's not possible — you must measure directly
 
 ---

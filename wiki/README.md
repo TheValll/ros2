@@ -1,7 +1,6 @@
 # ROS2 Learning Wiki
 
-A structured deep-dive into ROS2, from basic concepts to ros2_control hardware interfaces.
-Each part includes detailed explanations (hardware, memory, math when relevant) and a quiz.
+A structured deep-dive into ROS2, from basic concepts to ros2_control internals.
 
 ---
 
@@ -29,28 +28,11 @@ Each part includes detailed explanations (hardware, memory, math when relevant) 
 | 11 | [Controllers: DiffDrive](parts/11-controllers-diffdrive.md) | Differential drive kinematics, odometry math | `template_controllers.yaml` |
 | 12 | [Hardware Driver: LX-225](parts/12-lx225-driver.md) | UART, serial protocol, baudrate, servo commands | `LX225Driver.hpp`, `lx225_test.cpp` |
 
-### Block C: Final Assessment
+### Block C: ros2_control Deep Dive
 
-| # | Part | Description |
-|---|------|-------------|
-| F | [Final Quiz (50 questions)](quizzes/final-quiz.md) | Covers all 12 parts |
-
----
-
-## Quiz Tracking
-
-| Part | Quiz | My Answers | Score |
-|------|------|-----------|-------|
-| 1 | [Quiz 1](quizzes/quiz-01.md) | completed | 10/10 |
-| 2 | [Quiz 2](quizzes/quiz-02.md) | _pending_ | _/10_ |
-| 3 | [Quiz 3](quizzes/quiz-03.md) | _pending_ | _/10_ |
-| 4 | [Quiz 4](quizzes/quiz-04.md) | _pending_ | _/10_ |
-| 5 | [Quiz 5](quizzes/quiz-05.md) | _pending_ | _/10_ |
-| 6 | [Quiz 6](quizzes/quiz-06.md) | _pending_ | _/10_ |
-| 7 | [Quiz 7](quizzes/quiz-07.md) | _pending_ | _/10_ |
-| 8 | [Quiz 8](quizzes/quiz-08.md) | _pending_ | _/10_ |
-| 9 | [Quiz 9](quizzes/quiz-09.md) | _pending_ | _/10_ |
-| 10 | [Quiz 10](quizzes/quiz-10.md) | _pending_ | _/10_ |
-| 11 | [Quiz 11](quizzes/quiz-11.md) | _pending_ | _/10_ |
-| 12 | [Quiz 12](quizzes/quiz-12.md) | _pending_ | _/10_ |
-| Final | [Final Quiz](quizzes/final-quiz.md) | _pending_ | _/50_ |
+| # | Part | Key Concepts | Files |
+|---|------|-------------|-------|
+| 13 | [Writing a Custom Controller](parts/13-writing-custom-controller.md) | Controller plugin, interface config, update loop, pluginlib | `basic_controller.hpp/.cpp`, `basic_controller_plugin.xml` |
+| 14 | [Controller Manager Internals](parts/14-controller-manager-internals.md) | ResourceManager, interface claiming, URDF parsing, memory layout | — |
+| 15 | [Lifecycle & State Machines](parts/15-lifecycle-state-machines.md) | rclcpp_lifecycle, transitions, error handling, startup sequence | — |
+| 16 | [Transmissions, Sensors & GPIO](parts/16-transmissions-sensors-gpio.md) | Gear ratios, SensorInterface, GPIO interfaces, combined systems | — |

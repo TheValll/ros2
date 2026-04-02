@@ -298,4 +298,3 @@ The Controller Manager can then load this plugin **by name at runtime** — it d
 
 **Next:** [Part 10 — ros2_control URDF](10-ros2-control-urdf.md)
 
-**Quiz:** [Quiz 9](../quizzes/quiz-09.md)

@@ -277,4 +277,3 @@ ros2 topic pub /simple_topic example_interfaces/msg/String "data: hello"  # Publ
 
 **Next:** [Part 3 — Services](03-services.md)
 
-**Quiz:** [Quiz 2](../quizzes/quiz-02.md)

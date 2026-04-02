@@ -267,4 +267,3 @@ This tells Gazebo: "This robot has differential drive — spinning the wheels sh
 
 **Next:** [Part 8 — ros2_control Architecture](08-ros2-control-architecture.md)
 
-**Quiz:** [Quiz 7](../quizzes/quiz-07.md)

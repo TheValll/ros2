@@ -210,4 +210,3 @@ ros2 launch basic_description display.launch.xml
 
 **Next:** [Part 7 — URDF & Visualization](07-urdf-visualization.md)
 
-**Quiz:** [Quiz 6](../quizzes/quiz-06.md)

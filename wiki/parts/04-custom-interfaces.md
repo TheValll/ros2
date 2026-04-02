@@ -255,4 +255,3 @@ ament_target_dependencies(my_node rclcpp custom_interfaces)
 
 **Next:** [Part 5 — Parameters](05-parameters.md)
 
-**Quiz:** [Quiz 4](../quizzes/quiz-04.md)

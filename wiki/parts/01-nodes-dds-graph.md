@@ -282,4 +282,3 @@ This says: "when someone runs `ros2 run py_pkg minimal_py_node`, call the `main(
 
 **Next:** [Part 2 — Topics & Pub/Sub](02-topics-pub-sub.md)
 
-**Quiz:** [Quiz 1](../quizzes/quiz-01.md)

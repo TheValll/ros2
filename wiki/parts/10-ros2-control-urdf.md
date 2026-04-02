@@ -216,4 +216,3 @@ The Controller Manager reads the COMBINED output and uses:
 
 **Next:** [Part 11 — Controllers: DiffDrive](11-controllers-diffdrive.md)
 
-**Quiz:** [Quiz 10](../quizzes/quiz-10.md)

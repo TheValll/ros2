@@ -196,4 +196,3 @@ The only difference is `.value` (Python) vs `.as_string()` (C++). Python uses du
 
 **Next:** [Part 6 — Launch Files](06-launch-files.md)
 
-**Quiz:** [Quiz 5](../quizzes/quiz-05.md)

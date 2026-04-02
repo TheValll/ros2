@@ -348,6 +348,5 @@ USB to UART conversion:
 
 ---
 
-**Next:** [Final Quiz](../quizzes/final-quiz.md)
+**Next:** [Part 13 — Writing a Custom Controller](13-writing-custom-controller.md)
 
-**Quiz:** [Quiz 12](../quizzes/quiz-12.md)

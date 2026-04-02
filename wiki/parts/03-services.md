@@ -263,4 +263,3 @@ ros2 service call /add_two_ints example_interfaces/srv/AddTwoInts "{a: 5, b: 3}"
 
 **Next:** [Part 4 — Custom Interfaces](04-custom-interfaces.md)
 
-**Quiz:** [Quiz 3](../quizzes/quiz-03.md)

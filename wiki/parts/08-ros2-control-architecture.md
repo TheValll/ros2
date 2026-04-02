@@ -264,4 +264,3 @@ Timeline:
 
 **Next:** [Part 9 — Hardware Interface](09-hardware-interface.md)
 
-**Quiz:** [Quiz 8](../quizzes/quiz-08.md)

@@ -299,4 +299,3 @@ State interfaces:
 
 **Next:** [Part 12 — Hardware Driver: LX-225](12-lx225-driver.md)
 
-**Quiz:** [Quiz 11](../quizzes/quiz-11.md)

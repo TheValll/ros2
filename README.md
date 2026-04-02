@@ -413,6 +413,26 @@ ros2 control list_hardware_components
 ROS_WS/
 ├── bags/                       # ROS2 bag files storage
 │
+├── wiki/                       # ROS2 learning wiki (16 parts)
+│   ├── README.md                    # Syllabus and table of contents
+│   └── parts/
+│       ├── 01-nodes-dds-graph.md          # Nodes, DDS discovery, spin loop
+│       ├── 02-topics-pub-sub.md           # Pub/Sub, QoS, serialization
+│       ├── 03-services.md                 # Request/Reply, async pattern
+│       ├── 04-custom-interfaces.md        # .msg/.srv, IDL, codegen
+│       ├── 05-parameters.md              # Parameter server, YAML config
+│       ├── 06-launch-files.md            # Process orchestration, substitutions
+│       ├── 07-urdf-visualization.md      # URDF, Xacro, TF2, inertia
+│       ├── 08-ros2-control-architecture.md # Controller Manager, RT loop
+│       ├── 09-hardware-interface.md      # SystemInterface, read/write
+│       ├── 10-ros2-control-urdf.md       # <ros2_control> tags, pluginlib
+│       ├── 11-controllers-diffdrive.md   # DiffDrive kinematics, odometry
+│       ├── 12-lx225-driver.md            # UART, serial protocol, LX-225
+│       ├── 13-writing-custom-controller.md # Custom controller plugin
+│       ├── 14-controller-manager-internals.md # ResourceManager, interface claiming
+│       ├── 15-lifecycle-state-machines.md # rclcpp_lifecycle, transitions
+│       └── 16-transmissions-sensors-gpio.md # Gear ratios, sensors, GPIO
+│
 ├── utils/
 │   ├── basic_urdf/
 │   │   └── basic_urdf.urdf         # Basic URDF example
@@ -502,6 +522,16 @@ ROS_WS/
     │   │       └── mobile_base_hardware_interface.hpp # Hardware interface header
     │   └── src/
     │       └── mobile_base_hardware_interface.cpp  # Hardware interface (loopback mock)
+    │
+    ├── ros2_control_controller_template/  # Custom ros2_control controller plugin
+    │   ├── CMakeLists.txt
+    │   ├── package.xml
+    │   ├── basic_controller_plugin.xml            # pluginlib plugin descriptor
+    │   ├── include/
+    │   │   └── ros2_control_controller_template/
+    │   │       └── basic_controller.hpp           # Controller header (lifecycle + update)
+    │   └── src/
+    │       └── basic_controller.cpp               # Controller implementation (alpha filter)
     │
     ├── lx225_driver_test/              # LX-225 servo driver test package
     │   ├── CMakeLists.txt

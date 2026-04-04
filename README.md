@@ -444,7 +444,10 @@ ROS_WS/
 │   ├── basic_urdf/
 │   │   └── basic_urdf.urdf         # Basic URDF example
 │   ├── gazebo_basic_world/
-│   │   └── basic_world.sdf         # Basic Gazebo world example
+│   │   ├── basic_world.sdf         # Basic Gazebo world example
+│   │   └── assets/
+│   │       ├── grey wall/           # Grey wall Gazebo model
+│   │       └── shelf/               # Shelf Gazebo model
 │   ├── yaml_params/
 │   │   └── minimal_params.yaml     # Parameters file
 │   ├── rviz_config/
@@ -463,6 +466,9 @@ ROS_WS/
     │   ├── launch/
     │   │   ├── display.launch.py              # Python launch file (robot_state_publisher + rviz)
     │   │   └── display.launch.xml             # XML launch file
+    │   ├── models/
+    │   │   ├── grey_wall/                     # Grey wall Gazebo model
+    │   │   └── shelf/                         # Shelf Gazebo model (with meshes)
     │   ├── rviz/
     │   │   └── urdf_config.rviz               # RViz configuration
     │   ├── urdf/
@@ -539,6 +545,18 @@ ROS_WS/
     │   │       └── basic_controller.hpp           # Controller header (lifecycle + update)
     │   └── src/
     │       └── basic_controller.cpp               # Controller implementation (alpha filter)
+    │
+    ├── ros2_moveit_description_template/  # MoveIt2 robot arm description package
+    │   ├── CMakeLists.txt
+    │   ├── package.xml
+    │   ├── launch/
+    │   │   └── display.launch.xml               # XML launch file
+    │   ├── rviz/
+    │   │   └── urdf_config.rviz                 # RViz configuration
+    │   └── urdf/
+    │       ├── arm.urdf.xacro                   # Main arm URDF (with Xacro)
+    │       ├── arm.xacro                        # Arm description macros
+    │       └── common_properties.xacro          # Common URDF properties
     │
     ├── lx225_driver_test/              # LX-225 servo driver test package
     │   ├── CMakeLists.txt

@@ -4,7 +4,7 @@
   <name>ros2_control_controller_template</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
-  <maintainer email="valentin78.massonniere@gmail.com">valentin</maintainer>
+  <maintainer email="todo@todo.com">todo</maintainer>
   <license>TODO: License declaration</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>

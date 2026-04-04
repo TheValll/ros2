@@ -406,7 +406,7 @@ ros2 control list_hardware_interfaces
 ros2 control list_hardware_components
 ```
 
-Install MoveIt2
+**Install MoveIt2**
 ```bash
 sudo apt install ros-$ROS_DISTRO-rmw-cyclonedds-cpp
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp

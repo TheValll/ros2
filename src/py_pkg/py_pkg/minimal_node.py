@@ -3,7 +3,7 @@ import rclpy
 from rclpy.node import Node
 
 
-class MininalNode(Node):
+class MinimalNode(Node):
 
     def __init__(self):
         super().__init__("minimal_node")
@@ -14,7 +14,7 @@ class MininalNode(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    node = MininalNode()
+    node = MinimalNode()
     rclpy.spin(node)
     rclpy.shutdown()
 

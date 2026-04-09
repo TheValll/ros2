@@ -437,10 +437,12 @@ ROS_WS/
 │   │   └── minimal_params.yaml     # Parameters file
 │   ├── rviz_config/
 │   │   └── urdf_config.rviz        # RViz configuration
-│   └── LX-225-driver/
-│       ├── LX225Driver.hpp          # LX-225 servo driver header
-│       ├── LX225Driver_test.cpp     # Driver test source
-│       └── LX225Driver_test         # Compiled driver test binary
+│   ├── LX-225-driver/
+│   │   ├── LX225Driver.hpp          # LX-225 servo driver header
+│   │   ├── LX225Driver_test.cpp     # Driver test source
+│   │   └── LX225Driver_test         # Compiled driver test binary
+│   └── ros2_moveit/
+│       └── basic_moveit_node_no_poo.cpp  # Basic MoveIt node example (no OOP)
 │
 └── src/
     ├── basic_description/            # URDF description package
@@ -578,6 +580,13 @@ ROS_WS/
     │   │   └── ros2_controllers.yaml            # ros2_control controllers config
     │   └── launch/
     │       └── display.launch.xml               # Full bringup launch (controllers + MoveGroup + RViz)
+    │
+    ├── ros2_moveit_commander_cpp/      # MoveIt2 commander node (C++ subscribers)
+    │   ├── CMakeLists.txt
+    │   ├── package.xml
+    │   └── src/
+    │       ├── commander_template.cpp           # Commander node (named/joint/gripper targets via topics)
+    │       └── test_moveit.cpp                  # MoveIt test node
     │
     ├── lx225_driver_test/              # LX-225 servo driver test package
     │   ├── CMakeLists.txt
